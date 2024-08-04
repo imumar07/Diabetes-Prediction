@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: my-streamlit-app
+    env: python
+    repo: https://github.com/imumar07/Diabetes-Prediction.git # replace with your repo URL
+    branch: main # or your branch name
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run main.py
+    publish: /
