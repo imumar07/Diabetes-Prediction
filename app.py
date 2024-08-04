@@ -13,14 +13,14 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 import seaborn as sns
-import pywhatkit
+# import pywhatkit
 from datetime import datetime 
-def do_message(name,number,report):
-    today=datetime.now()
-    hours=int(today.strftime("%H"))
-    minutes=(int(today.strftime("%M"))+2)
-    pywhatkit.sendwhatmsg("+91{}".format(number),"Hi {}\n {}".format(name,report),hours, minutes)
-    st.write("Message sent in whatsapp : )")
+# def do_message(name,number,report):
+#     today=datetime.now()
+#     hours=int(today.strftime("%H"))
+#     minutes=(int(today.strftime("%M"))+2)
+#     pywhatkit.sendwhatmsg("+91{}".format(number),"Hi {}\n {}".format(name,report),hours, minutes)
+#     st.write("Message sent in whatsapp : )")
 df = pd.read_csv('diabetes.csv')
 df=df.dropna(how="all")
 
@@ -168,11 +168,11 @@ else:
 st.title(output)
 st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
-def take_attendance():
-    do_message(st.session_state.name,st.session_state.number,output)
+# def take_attendance():
+#     do_message(st.session_state.name,st.session_state.number,output)
 
-st.title("Get the report")
-with st.form(key="my_form"):
-    st.text_input("Name", key="name")
-    st.text_input("Number", key="number")
-    st.form_submit_button("Whatsapp", on_click=take_attendance)
+# st.title("Get the report")
+# with st.form(key="my_form"):
+#     st.text_input("Name", key="name")
+#     st.text_input("Number", key="number")
+#     st.form_submit_button("Whatsapp", on_click=take_attendance)
